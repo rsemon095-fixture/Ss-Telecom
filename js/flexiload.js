@@ -3,7 +3,9 @@ import { rtdb } from "../firebase.js";
 import {
     ref,
     push,
-    onValue
+    onValue,
+    get,
+    set
 } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-database.js";
 
 const amountInput = document.getElementById("amount");
@@ -11,9 +13,8 @@ const saveBtn = document.getElementById("saveBtn");
 const totalText = document.getElementById("todayTotal");
 
 const loadRef = ref(rtdb, "flexiload");
-
 // Save Amount
-saveBtn.addEventListener("click", () => {
+saveBtn.addEventListener("click", async () => {
 
     const amount = Number(amountInput.value);
 
@@ -22,24 +23,23 @@ saveBtn.addEventListener("click", () => {
         return;
     }
 
-    push(loadRef, {
+    await push(loadRef, {
         amount: amount,
         time: Date.now()
     });
-// Dashboard Today's Sales Update
-const salesRef = ref(rtdb, "dashboard/todaySales");
 
-onValue(salesRef, (snapshot) => {
+    // Dashboard Today Sales Update
+    const salesRef = ref(rtdb, "dashboard/todaySales");
 
-    const oldTotal = Number(snapshot.val() || 0);
+    const snap = await get(salesRef);
 
-    set(salesRef, oldTotal + amount);
+    const oldTotal = Number(snap.val() || 0);
 
-}, { onlyOnce: true });
+    await set(salesRef, oldTotal + amount);
+
     amountInput.value = "";
 
 });
-
 // Live Total
 onValue(loadRef, (snapshot) => {
 
@@ -54,5 +54,22 @@ onValue(loadRef, (snapshot) => {
     });
 
     totalText.innerHTML = "৳ " + total.toLocaleString();
+
+});
+
+// Dashboard Live Sales
+
+const dashboardSales = document.getElementById("todaySales");
+
+const salesRef = ref(rtdb, "dashboard/todaySales");
+
+onValue(salesRef, (snapshot) => {
+
+    if (dashboardSales) {
+
+        dashboardSales.innerHTML =
+            "৳ " + Number(snapshot.val() || 0).toLocaleString();
+
+    }
 
 });
