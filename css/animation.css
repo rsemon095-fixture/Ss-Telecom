@@ -1,101 +1,44 @@
-/* ===========================
+/* ==========================
    SS TELECOM Animation
-=========================== */
+========================== */
 
-/* Logo Animation */
+/* Loader */
+
+.loader{
+    position:fixed;
+    inset:0;
+    background:linear-gradient(135deg,#0f172a,#00c853);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+    animation:hideLoader .8s ease forwards;
+    animation-delay:3s;
+}
+
+/* Logo */
+
 .logo{
-    animation: logoFloat 2.5s ease-in-out infinite;
+    width:130px;
+    height:130px;
+    object-fit:contain;
+    animation:logoFloat 2s infinite ease-in-out;
 }
 
-@keyframes logoFloat{
-    0%{
-        transform:translateY(0) scale(1);
-    }
-    50%{
-        transform:translateY(-10px) scale(1.05);
-    }
-    100%{
-        transform:translateY(0) scale(1);
-    }
-}
+/* Title */
 
-/* Title Glow */
 .title{
-    animation:titleGlow 1.8s infinite alternate;
+    margin-top:20px;
+    font-size:40px;
+    font-weight:800;
+    color:#fff;
+    text-shadow:0 0 20px #00ff80;
+    animation:titleGlow 1.5s infinite alternate;
 }
 
-@keyframes titleGlow{
-    from{
-        text-shadow:
-        0 0 10px #00ff66,
-        0 0 20px #00ff66;
-    }
-    to{
-        text-shadow:
-        0 0 20px #00ff66,
-        0 0 40px #00ff66,
-        0 0 60px #00ff66;
-    }
-}
+/* Owner */
 
-/* Owner Fade */
 .owner{
-    animation:fadeText 2s infinite alternate;
-}
-
-@keyframes fadeText{
-    from{
-        opacity:.5;
-    }
-    to{
-        opacity:1;
-    }
-}
-
-/* Loading Bar */
-.loading{
-    animation:loadingBar 3s linear forwards;
-}
-
-@keyframes loadingBar{
-    0%{
-        width:0%;
-    }
-    100%{
-        width:100%;
-    }
-}
-
-/* Loader Fade Out */
-.loader.hide{
-    opacity:0;
-    visibility:hidden;
-    transition:0.5s;
-}
-
-/* Card Animation */
-.card{
-    animation:cardPop .5s ease;
-}
-
-@keyframes cardPop{
-    from{
-        opacity:0;
-        transform:translateY(20px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
-/* Button Hover */
-button,
-.logout-btn{
-    transition:.3s;
-}
-
-button:hover,
-.logout-btn:hover{
-    transform:scale(1.05);
-}
+    margin-top:10px;
+    color:#eee
