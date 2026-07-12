@@ -23,7 +23,64 @@ body{
     max-width:700px;
     margin:auto;
 }
+<hr style="margin:25px 0;border:1px solid #334155;">
 
+<h2 style="text-align:center;color:#00ff80;">
+Stock Summary
+</h2>
+
+<div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;margin:20px 0;">
+
+<div style="flex:1;min-width:150px;background:#0f172a;padding:15px;border-radius:10px;text-align:center;">
+<h3 id="totalProducts">0</h3>
+<p>Total Products</p>
+</div>
+
+<div style="flex:1;min-width:150px;background:#0f172a;padding:15px;border-radius:10px;text-align:center;">
+<h3 id="totalQty">0</h3>
+<p>Total Quantity</p>
+</div>
+
+</div>
+
+<h2 style="text-align:center;color:#00ff80;margin-top:25px;">
+Product List
+</h2>
+
+<div style="overflow-x:auto;">
+
+<table style="width:100%;border-collapse:collapse;margin-top:15px;">
+
+<thead>
+
+<tr style="background:#00c853;color:#fff;">
+
+<th style="padding:10px;">Product</th>
+<th style="padding:10px;">Category</th>
+<th style="padding:10px;">Buy</th>
+<th style="padding:10px;">Sell</th>
+<th style="padding:10px;">Qty</th>
+
+</tr>
+
+</thead>
+
+<tbody id="productTable">
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</div>
+
+<script type="module" src="../js/products.js"></script>
+
+</body>
+</html>
 .card{
     background:#1e293b;
     padding:20px;
