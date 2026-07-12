@@ -1,1 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>Stock Balance</title>
+
+<link rel="stylesheet" href="../css/dashboard.css">
+
+<style>
+
+body{
+background:#0f172a;
+font-family:Poppins,sans-serif;
+color:#fff;
+margin:0;
+padding:20px;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+}
+
+.card{
+background:#1e293b;
+padding:20px;
+border-radius:15px;
+margin-bottom:20px;
+}
+
+.summary{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:15px;
+margin-bottom:20px;
+}
+
+.box{
+background:#00c853;
+padding:20px;
+border-radius:12px;
+text-align:center;
+}
+
+.box h2{
+margin:0;
+font-size:32px;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+}
+
+th,td{
+padding:12px;
+border:1px solid #333;
+text-align:center;
+}
+
+th{
+background:#00c853;
+}
+
+tr:nth-child(even){
+background:#263238;
+}
+
+.back{
+color:#fff;
+text-decoration:none;
+display:inline-block;
+margin-bottom:20px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<a href="../dashboard.html" class="back">⬅ Dashboard</a>
+
+<div class="summary">
+
+<div class="box">
+<h2 id="products">0</h2>
+<p>Products</p>
+</div>
+
+<div class="box">
+<h2 id="qty">0</h2>
+<p>Total Qty</p>
+</div>
+
+<div class="box">
+<h2 id="value">৳0</h2>
+<p>Stock Value</p>
+</div>
+
+</div>
+
+<div class="card">
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Product</th>
+<th>Category</th>
+<th>Qty</th>
+<th>Buy Price</th>
+<th>Stock Value</th>
+
+</tr>
+
+</thead>
+
+<tbody id="stockTable">
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+<script type="module" src="../js/stock.js"></script>
+
+</body>
+  </html>
