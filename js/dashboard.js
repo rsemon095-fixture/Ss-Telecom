@@ -74,3 +74,60 @@ window.logout = function () {
 };
 
 console.log("✅ Dashboard Loaded");
+// ==========================
+// Dashboard Animation
+// ==========================
+
+// Card Animation
+const cards = document.querySelectorAll(".card");
+
+cards.forEach((card, index) => {
+
+    card.style.opacity = "0";
+    card.style.transform = "translateY(30px)";
+
+    setTimeout(() => {
+
+        card.style.transition = "0.5s ease";
+        card.style.opacity = "1";
+        card.style.transform = "translateY(0)";
+
+    }, index * 100);
+
+});
+
+// Ripple Effect
+cards.forEach(card => {
+
+    card.addEventListener("click", function () {
+
+        this.style.transform = "scale(.96)";
+
+        setTimeout(() => {
+
+            this.style.transform = "";
+
+        }, 150);
+
+    });
+
+});
+
+// Welcome Message
+const hour = new Date().getHours();
+
+let message = "Welcome";
+
+if (hour < 12) {
+    message = "🌞 Good Morning";
+} else if (hour < 18) {
+    message = "☀️ Good Afternoon";
+} else {
+    message = "🌙 Good Evening";
+}
+
+const welcomeTitle = document.querySelector(".welcome-box h1");
+
+if (welcomeTitle) {
+    welcomeTitle.textContent = message + " - SS TELECOM";
+}
