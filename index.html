@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>SS TELECOM</title>
 
 <link rel="manifest" href="manifest.json">
+
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/animation.css">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
@@ -19,69 +19,77 @@
 
 <body>
 
-<div class="loader">
+<!-- Loader -->
 
-<img src="assets/logo.png" class="logo">
+<div class="loader" id="loader">
 
-<h1 class="title">
-SS TELECOM
-</h1>
+<img src="assets/logo-png.png" class="logo" alt="SS TELECOM">
+
+<h1 class="title">SS TELECOM</h1>
 
 <p class="owner">
-Flexiload • Mobile Accessories • Bill Payment
+Owner : RS Emon
 </p>
 
 <div class="loading-bar">
-
-<div class="loading"></div>
-
+<span></span>
 </div>
 
 </div>
 
-<section class="home">
+<!-- Login Box -->
 
-<div class="overlay"></div>
+<div class="login-container">
 
-<img src="assets/banner.jpg" class="banner">
+<div class="login-box">
 
-<div class="content">
+<img src="assets/logo-png.png" class="login-logo">
 
-<h1>
-WELCOME TO
-</h1>
+<h2>Welcome</h2>
 
-<h2>
-SS TELECOM
-</h2>
+<p>SS TELECOM Shop Management System</p>
 
-<p>
+<form id="loginForm">
 
-Grameenphone • Banglalink • Robi • Airtel
+<div class="input-box">
 
-</p>
+<input
+type="email"
+id="email"
+placeholder="Email"
+required>
 
-<p>
+</div>
 
-bKash • Nagad • Rocket • Upay
+<div class="input-box">
 
-</p>
+<input
+type="password"
+id="password"
+placeholder="Password"
+required>
 
-<a href="login.html">
+</div>
 
-<button>
+<button
+type="submit"
+class="login-btn">
 
-ENTER
+Login
 
 </button>
 
-</a>
+</form>
+
+<p id="msg"></p>
 
 </div>
 
-</section>
+</div>
 
+<script type="module" src="js/auth.js"></script>
 <script src="js/app.js"></script>
 
 </body>
-  </html>
+
+</html>
