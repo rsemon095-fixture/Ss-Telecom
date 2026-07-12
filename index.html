@@ -35,6 +35,47 @@
     </div>
 
     <script>
+        // ডেটা জমা রাখার জন্য একটি অ্যারে
+let transactions = JSON.parse(localStorage.getItem('ss_telecom_data')) || [];
+
+function showSection(section) {
+    const content = document.getElementById('content');
+    
+    if (section === 'sales') {
+        content.innerHTML = `
+            <h2 class='text-xl font-bold mb-4'>নতুন বিক্রয় এন্ট্রি</h2>
+            <div id="chat-box" class="h-40 overflow-y-auto border p-2 mb-4 bg-gray-50 rounded"></div>
+            <input type='text' id='item' placeholder='পণ্যের নাম' class='w-full border p-2 mb-2'>
+            <input type='number' id='price' placeholder='দাম' class='w-full border p-2 mb-2'>
+            <button onclick='saveSale()' class='bg-blue-600 text-white px-4 py-2 w-full rounded'>জমা করুন</button>
+        `;
+        renderChat();
+    }
+}
+
+function saveSale() {
+    const item = document.getElementById('item').value;
+    const price = document.getElementById('price').value;
+    
+    if(item && price) {
+        const entry = { item, price, date: new Date().toLocaleDateString() };
+        transactions.push(entry);
+        localStorage.setItem('ss_telecom_data', JSON.stringify(transactions));
+        renderChat();
+        // ইনপুট খালি করা
+        document.getElementById('item').value = '';
+        document.getElementById('price').value = '';
+    }
+}
+
+function renderChat() {
+    const chatBox = document.getElementById('chat-box');
+    chatBox.innerHTML = transactions.map(t => 
+        `<div class='mb-2 p-2 bg-blue-100 rounded self-start'>
+            <strong>${t.item}</strong>: ${t.price} টাকা
+        </div>`
+    ).join('');
+        }
         function showSection(section) {
             const content = document.getElementById('content');
             if(section === 'sales') {
