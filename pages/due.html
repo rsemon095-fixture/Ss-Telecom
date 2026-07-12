@@ -1,1 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SS TELECOM | Due Money</title>
+
+<link rel="stylesheet" href="../css/dashboard.css">
+
+<style>
+
+body{
+background:#0f172a;
+font-family:Poppins,sans-serif;
+color:#fff;
+margin:0;
+padding:20px;
+}
+
+.container{
+max-width:700px;
+margin:auto;
+}
+
+.card{
+background:#1e293b;
+padding:20px;
+border-radius:15px;
+}
+
+.back{
+color:#fff;
+text-decoration:none;
+display:inline-block;
+margin-bottom:20px;
+}
+
+h1{
+text-align:center;
+color:#00ff80;
+margin-bottom:20px;
+}
+
+input{
+width:100%;
+padding:14px;
+margin-top:12px;
+border:none;
+border-radius:10px;
+font-size:16px;
+box-sizing:border-box;
+}
+
+button{
+width:100%;
+padding:15px;
+margin-top:20px;
+border:none;
+border-radius:10px;
+background:#00c853;
+color:#fff;
+font-size:18px;
+font-weight:bold;
+cursor:pointer;
+}
+
+button:hover{
+background:#009624;
+}
+
+table{
+width:100%;
+margin-top:25px;
+border-collapse:collapse;
+}
+
+th,td{
+padding:12px;
+border:1px solid #374151;
+text-align:center;
+}
+
+th{
+background:#00c853;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<a href="../dashboard.html" class="back">⬅ Dashboard</a>
+
+<div class="card">
+
+<h1>Due Money</h1>
+
+<input
+type="text"
+id="customerName"
+placeholder="Customer Name">
+
+<input
+type="text"
+id="customerPhone"
+placeholder="Mobile Number">
+
+<input
+type="number"
+id="dueAmount"
+placeholder="Due Amount">
+
+<button id="saveDue">
+
+SAVE DUE
+
+</button>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Name</th>
+<th>Phone</th>
+<th>Amount</th>
+
+</tr>
+
+</thead>
+
+<tbody id="dueTable">
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+<script type="module" src="../js/due.js"></script>
+
+</body>
+  </html>
