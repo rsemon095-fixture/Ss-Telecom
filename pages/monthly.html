@@ -1,1 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SS TELECOM | Monthly Report</title>
+
+<link rel="stylesheet" href="../css/dashboard.css">
+
+<style>
+
+body{
+margin:0;
+padding:20px;
+background:#0f172a;
+font-family:Arial,sans-serif;
+color:#fff;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+}
+
+.back{
+color:#fff;
+text-decoration:none;
+display:inline-block;
+margin-bottom:20px;
+}
+
+h1{
+text-align:center;
+color:#00ff80;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:15px;
+margin-top:20px;
+}
+
+.card{
+background:#1e293b;
+padding:20px;
+border-radius:15px;
+text-align:center;
+}
+
+.card h3{
+margin:0;
+color:#00ff80;
+}
+
+.card h2{
+margin-top:15px;
+font-size:30px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<a href="../dashboard.html" class="back">
+⬅ Dashboard
+</a>
+
+<h1>Monthly Report</h1>
+
+<div class="grid">
+
+<div class="card">
+<h3>Flexiload</h3>
+<h2 id="monthLoad">৳0</h2>
+</div>
+
+<div class="card">
+<h3>Add Money</h3>
+<h2 id="monthMoney">৳0</h2>
+</div>
+
+<div class="card">
+<h3>Due Money</h3>
+<h2 id="monthDue">৳0</h2>
+</div>
+
+<div class="card">
+<h3>Products</h3>
+<h2 id="monthProduct">0</h2>
+</div>
+
+</div>
+
+</div>
+
+<script type="module" src="../js/monthly.js"></script>
+
+</body>
+</html>
