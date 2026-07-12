@@ -35,6 +35,18 @@
     </div>
 
     <script>
+        function showSection(section) {
+            const content = document.getElementById('content');
+            if(section === 'sales') {
+                content.innerHTML = `<h2 class='text-xl mb-4'>পণ্য বিক্রয় এন্ট্রি</h2>
+                <input type='text' placeholder='পণ্যের নাম' class='w-full border p-2 mb-2'>
+                <input type='number' placeholder='দাম' class='w-full border p-2 mb-2'>
+                <button class='bg-blue-500 text-white px-4 py-2 rounded'>সেভ করুন</button>`;
+            } else if(section === 'inventory') {
+                content.innerHTML = `<h2 class='text-xl'>স্টক ব্যালেন্স</h2><p>ইয়ারফোন: ১০টি, চার্জার: ৫টি...</p>`;
+            }
+            // অন্যান্য সেকশন এখানে যুক্ত হবে
+        }
         // ডেটা জমা রাখার জন্য একটি অ্যারে
 let transactions = JSON.parse(localStorage.getItem('ss_telecom_data')) || [];
 
@@ -75,18 +87,6 @@ function renderChat() {
             <strong>${t.item}</strong>: ${t.price} টাকা
         </div>`
     ).join('');
-        }
-        function showSection(section) {
-            const content = document.getElementById('content');
-            if(section === 'sales') {
-                content.innerHTML = `<h2 class='text-xl mb-4'>পণ্য বিক্রয় এন্ট্রি</h2>
-                <input type='text' placeholder='পণ্যের নাম' class='w-full border p-2 mb-2'>
-                <input type='number' placeholder='দাম' class='w-full border p-2 mb-2'>
-                <button class='bg-blue-500 text-white px-4 py-2 rounded'>সেভ করুন</button>`;
-            } else if(section === 'inventory') {
-                content.innerHTML = `<h2 class='text-xl'>স্টক ব্যালেন্স</h2><p>ইয়ারফোন: ১০টি, চার্জার: ৫টি...</p>`;
-            }
-            // অন্যান্য সেকশন এখানে যুক্ত হবে
         }
     </script>
 </body>
