@@ -26,7 +26,16 @@ saveBtn.addEventListener("click", () => {
         amount: amount,
         time: Date.now()
     });
+// Dashboard Today's Sales Update
+const salesRef = ref(rtdb, "dashboard/todaySales");
 
+onValue(salesRef, (snapshot) => {
+
+    const oldTotal = Number(snapshot.val() || 0);
+
+    set(salesRef, oldTotal + amount);
+
+}, { onlyOnce: true });
     amountInput.value = "";
 
 });
