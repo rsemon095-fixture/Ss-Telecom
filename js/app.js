@@ -1,80 +1,55 @@
 // ==============================
-// SS TELECOM
-// Loading Controller
+// SS TELECOM App
 // ==============================
 
-const loader = document.querySelector(".loader");
-const home = document.querySelector(".home");
-
-// 3 সেকেন্ড পরে Home Screen দেখাবে
 window.addEventListener("load", () => {
+
+    const loader = document.querySelector(".loader");
+    const login = document.querySelector(".login-container");
+
+    if (login) {
+        login.style.display = "none";
+    }
 
     setTimeout(() => {
 
-        loader.classList.add("hide");
+        if (loader) {
+            loader.style.opacity = "0";
 
-        setTimeout(() => {
+            setTimeout(() => {
+                loader.style.display = "none";
 
-            loader.style.display = "none";
+                if (login) {
+                    login.style.display = "flex";
+                }
 
-            home.classList.add("show");
+            }, 500);
+        } else {
 
-        }, 800);
+            if (login) {
+                login.style.display = "flex";
+            }
 
-    }, 3000);
+        }
+
+    }, 2500);
 
 });
 
 
-// Service Worker Register
+// ==============================
+// Service Worker
+// ==============================
+
 if ("serviceWorker" in navigator) {
 
     window.addEventListener("load", () => {
 
-        navigator.serviceWorker.register("sw.js")
-        .then(() => {
-
-            console.log("Service Worker Registered");
-
-        })
-        .catch((err) => {
-
-            console.log("Service Worker Error :", err);
-
-        });
+        navigator.serviceWorker
+            .register("./sw.js")
+            .then(() => console.log("Service Worker Registered"))
+            .catch(err => console.log(err));
 
     });
 
 }
-
-
-// Disable Right Click
-document.addEventListener("contextmenu", function(e){
-
-    e.preventDefault();
-
-});
-
-
-// Disable Ctrl + U
-document.addEventListener("keydown", function(e){
-
-    if(e.ctrlKey && e.key.toLowerCase() === "u"){
-
-        e.preventDefault();
-
-    }
-
-});
-
-
-// Disable F12
-document.addEventListener("keydown", function(e){
-
-    if(e.key === "F12"){
-
-        e.preventDefault();
-
-    }
-
-});
