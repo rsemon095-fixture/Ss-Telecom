@@ -1,1 +1,168 @@
+/* ==========================
+   SS TELECOM Dashboard
+========================== */
 
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:#fff;
+}
+
+.top-header{
+    width:100%;
+    background:linear-gradient(90deg,#00c853,#009688);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 20px;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 5px 15px rgba(0,0,0,.3);
+}
+
+.logo-box{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.shop-logo{
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    background:#fff;
+    object-fit:cover;
+}
+
+.logo-box h2{
+    font-size:24px;
+    color:#fff;
+}
+
+.logo-box p{
+    font-size:13px;
+    color:#e8f5e9;
+}
+
+.logout-btn{
+    background:#ff3d00;
+    color:#fff;
+    border:none;
+    padding:10px 18px;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.logout-btn:hover{
+    background:#d84315;
+}
+
+.welcome-box{
+    text-align:center;
+    padding:30px 15px;
+}
+
+.welcome-box h1{
+    font-size:32px;
+    color:#00ff80;
+}
+
+.welcome-box p{
+    margin-top:10px;
+    color:#ddd;
+}
+
+.dashboard{
+    width:95%;
+    margin:20px auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
+    gap:20px;
+}
+
+.card{
+    text-decoration:none;
+    color:#fff;
+    background:#1e293b;
+    border-radius:18px;
+    padding:25px 15px;
+    text-align:center;
+    transition:.3s;
+    border:1px solid rgba(255,255,255,.08);
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    background:#00c853;
+}
+
+.card img{
+    width:70px;
+    height:70px;
+    object-fit:contain;
+    margin-bottom:15px;
+}
+
+.card h3{
+    font-size:20px;
+    margin-bottom:8px;
+}
+
+.card p{
+    font-size:14px;
+    color:#ddd;
+}
+
+.dashboard-footer{
+    text-align:center;
+    padding:25px;
+    color:#bbb;
+    margin-top:30px;
+    border-top:1px solid rgba(255,255,255,.08);
+}
+
+@media(max-width:768px){
+
+.top-header{
+    flex-direction:column;
+    gap:15px;
+}
+
+.logo-box{
+    flex-direction:column;
+}
+
+.welcome-box h1{
+    font-size:24px;
+}
+
+.dashboard{
+    grid-template-columns:repeat(2,1fr);
+}
+
+.card{
+    padding:20px 10px;
+}
+
+.card h3{
+    font-size:16px;
+}
+
+.card img{
+    width:55px;
+    height:55px;
+}
+
+.logout-btn{
+    width:100%;
+}
+
+  }
