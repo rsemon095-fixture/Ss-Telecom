@@ -2,83 +2,113 @@
 <html lang="en">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>SS TELECOM | Flexiload</title>
 
-<link rel="stylesheet" href="../css/style.css">
 <link rel="stylesheet" href="../css/dashboard.css">
 
 <style>
 
 body{
-background:#0f172a;
-padding:20px;
+    margin:0;
+    font-family:Poppins,sans-serif;
+    background:#0f172a;
+    color:#fff;
 }
 
 .container{
-max-width:600px;
-margin:auto;
-background:#1e293b;
-padding:20px;
-border-radius:15px;
+    max-width:500px;
+    margin:30px auto;
+    padding:20px;
 }
 
-h2{
-text-align:center;
-color:#00ff80;
-margin-bottom:20px;
+.card{
+    background:#1e293b;
+    border-radius:20px;
+    padding:25px;
+    text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,.35);
 }
 
-label{
-display:block;
-margin-top:15px;
-margin-bottom:5px;
-font-weight:bold;
+h1{
+    color:#00ff80;
+    margin-bottom:20px;
 }
 
-select,input{
-width:100%;
-padding:12px;
-border:none;
-border-radius:8px;
-font-size:16px;
+.total{
+    font-size:40px;
+    font-weight:bold;
+    color:#00ff80;
+    margin:20px 0;
+}
+
+input{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    font-size:18px;
+    margin-top:15px;
+    box-sizing:border-box;
 }
 
 button{
-width:100%;
-margin-top:20px;
-padding:14px;
-background:#00c853;
-color:#fff;
-border:none;
-border-radius:8px;
-font-size:18px;
-font-weight:bold;
-cursor:pointer;
+    width:100%;
+    margin-top:20px;
+    padding:15px;
+    border:none;
+    border-radius:10px;
+    background:#00c853;
+    color:#fff;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
 }
 
 button:hover{
-background:#009624;
+    background:#00a844;
 }
 
-table{
-width:100%;
-margin-top:25px;
-border-collapse:collapse;
+.back{
+    display:inline-block;
+    margin-bottom:20px;
+    color:#fff;
+    text-decoration:none;
 }
 
-th,td{
-padding:10px;
-border:1px solid #444;
-text-align:center;
-}
+</style>
+</head>
 
-th{
-background:#00c853;
-}
+<body>
 
-tr{
-background:#263238
+<div class="container">
+
+<a href="../dashboard.html" class="back">⬅ Dashboard</a>
+
+<div class="card">
+
+<h1>Today's Total Load</h1>
+
+<div class="total" id="todayTotal">
+৳ 0
+</div>
+
+<input
+type="number"
+id="amount"
+placeholder="Enter Load Amount">
+
+<button id="saveBtn">
+SAVE LOAD
+</button>
+
+</div>
+
+</div>
+
+<script type="module" src="../js/flexiload.js"></script>
+
+</body>
+</html>
