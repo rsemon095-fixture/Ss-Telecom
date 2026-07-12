@@ -21,82 +21,6 @@ cards.forEach((card, index) => {
 });
 
 // Card Click Effect
-cards.forEach((card) => {
-
-    card.addEventListener("click", () => {
-
-        card.style.transform = "scale(0.96)";
-
-        setTimeout(() => {
-
-            card.style.transform = "";
-
-        }, 150);
-
-    });
-
-});
-
-// Welcome Message
-const title = document.querySelector(".welcome-box h1");
-
-if (title) {
-
-    const hour = new Date().getHours();
-
-    if (hour < 12) {
-
-        title.innerHTML = "🌞 Good Morning";
-
-    } else if (hour < 18) {
-
-        title.innerHTML = "☀️ Good Afternoon";
-
-    } else {
-
-        title.innerHTML = "🌙 Good Evening";
-
-    }
-
-}
-
-// Logout Function
-window.logout = function () {
-
-    if (confirm("Are you sure you want to logout?")) {
-
-        localStorage.removeItem("user");
-
-        window.location.href = "index.html";
-
-    }
-
-};
-
-console.log("✅ Dashboard Loaded");
-// ==========================
-// Dashboard Animation
-// ==========================
-
-// Card Animation
-const cards = document.querySelectorAll(".card");
-
-cards.forEach((card, index) => {
-
-    card.style.opacity = "0";
-    card.style.transform = "translateY(30px)";
-
-    setTimeout(() => {
-
-        card.style.transition = "0.5s ease";
-        card.style.opacity = "1";
-        card.style.transform = "translateY(0)";
-
-    }, index * 100);
-
-});
-
-// Ripple Effect
 cards.forEach(card => {
 
     card.addEventListener("click", function () {
@@ -114,20 +38,26 @@ cards.forEach(card => {
 });
 
 // Welcome Message
-const hour = new Date().getHours();
-
-let message = "Welcome";
-
-if (hour < 12) {
-    message = "🌞 Good Morning";
-} else if (hour < 18) {
-    message = "☀️ Good Afternoon";
-} else {
-    message = "🌙 Good Evening";
-}
-
 const welcomeTitle = document.querySelector(".welcome-box h1");
 
 if (welcomeTitle) {
-    welcomeTitle.textContent = message + " - SS TELECOM";
+
+    const hour = new Date().getHours();
+
+    if (hour < 12) {
+
+        welcomeTitle.textContent = "🌞 Good Morning - SS TELECOM";
+
+    } else if (hour < 18) {
+
+        welcomeTitle.textContent = "☀️ Good Afternoon - SS TELECOM";
+
+    } else {
+
+        welcomeTitle.textContent = "🌙 Good Evening - SS TELECOM";
+
+    }
+
 }
+
+console.log("✅ Dashboard Loaded");
