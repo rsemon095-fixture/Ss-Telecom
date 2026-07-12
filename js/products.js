@@ -35,14 +35,23 @@ function saveProduct() {
         return;
     }
 
-    push(productRef, {
-        name: name,
-        category: cat,
-        buyPrice: buy,
-        sellPrice: sell,
-        quantity: qty,
-        createdAt: Date.now()
-    });
+    import {
+  ref,
+  push,
+  set
+} from "https://www.gstatic.com/firebasejs/11.10.0/firebase-database.js";
+
+const newProductRef = push(productRef);
+
+await set(newProductRef, {
+    id: newProductRef.key,
+    name: name,
+    category: cat,
+    buyPrice: buy,
+    sellPrice: sell,
+    quantity: qty,
+    createdAt: Date.now()
+});
 
     alert("✅ Product Saved");
 
