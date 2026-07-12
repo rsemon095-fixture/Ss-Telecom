@@ -4,73 +4,75 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-<title>SS TELECOM - Chat Board</title>
+<title>SS TELECOM Chat</title>
 
-<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/dashboard.css">
 
 <style>
 
 body{
+background:#0f172a;
 margin:0;
-font-family:Poppins,sans-serif;
-background:#111;
+font-family:Arial,sans-serif;
 color:#fff;
 }
 
-header{
-background:#00c853;
-padding:15px;
-text-align:center;
-font-size:22px;
-font-weight:bold;
+.container{
+max-width:800px;
+margin:auto;
+padding:20px;
 }
 
-.chat-box{
-height:70vh;
+.back{
+color:#fff;
+text-decoration:none;
+}
+
+h1{
+text-align:center;
+color:#00ff80;
+}
+
+#chatBox{
+height:420px;
 overflow-y:auto;
+background:#1e293b;
 padding:15px;
-background:#1b1b1b;
+border-radius:12px;
+margin:20px 0;
 }
 
 .message{
-background:#2b2b2b;
-padding:10px 15px;
-border-radius:10px;
+background:#334155;
+padding:10px;
 margin-bottom:10px;
+border-radius:8px;
 }
 
 .message strong{
 color:#00ff80;
 }
 
-.send-box{
-position:fixed;
-bottom:0;
-left:0;
-right:0;
-display:flex;
-padding:10px;
-background:#222;
-}
-
-.send-box input{
-flex:1;
+input{
+width:100%;
 padding:12px;
+margin-top:10px;
 border:none;
 border-radius:8px;
-outline:none;
+box-sizing:border-box;
 }
 
-.send-box button{
-margin-left:10px;
-padding:12px 20px;
-border:none;
+button{
+width:100%;
+margin-top:15px;
+padding:14px;
 background:#00c853;
-color:#fff;
-font-weight:bold;
+color:white;
+border:none;
 border-radius:8px;
+font-size:17px;
 cursor:pointer;
 }
 
@@ -80,6 +82,33 @@ cursor:pointer;
 
 <body>
 
-<header>
+<div class="container">
 
-💬 SS TELECOM Chat
+<a class="back" href="../dashboard.html">⬅ Dashboard</a>
+
+<h1>SS TELECOM Chat</h1>
+
+<div id="chatBox"></div>
+
+<input
+type="text"
+id="userName"
+placeholder="Your Name">
+
+<input
+type="text"
+id="message"
+placeholder="Write Message">
+
+<button id="sendBtn">
+
+Send Message
+
+</button>
+
+</div>
+
+<script type="module" src="../js/chat.js"></script>
+
+</body>
+</html>
