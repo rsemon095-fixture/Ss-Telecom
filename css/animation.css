@@ -1,1 +1,70 @@
+/* ===========================
+   SS TELECOM Animation
+=========================== */
 
+/* Logo Animation */
+.logo{
+    animation: logoFloat 2.5s ease-in-out infinite;
+}
+
+@keyframes logoFloat{
+    0%{
+        transform:translateY(0) scale(1);
+    }
+    50%{
+        transform:translateY(-10px) scale(1.05);
+    }
+    100%{
+        transform:translateY(0) scale(1);
+    }
+}
+
+/* Title Glow */
+.title{
+    animation:titleGlow 1.8s infinite alternate;
+}
+
+@keyframes titleGlow{
+    from{
+        text-shadow:
+        0 0 10px #00ff66,
+        0 0 20px #00ff66;
+    }
+    to{
+        text-shadow:
+        0 0 20px #00ff66,
+        0 0 40px #00ff66,
+        0 0 60px #00ff66;
+    }
+}
+
+/* Owner Fade */
+.owner{
+    animation:fadeText 2s infinite alternate;
+}
+
+@keyframes fadeText{
+    from{
+        opacity:.5;
+    }
+    to{
+        opacity:1;
+    }
+}
+
+/* Loading Bar */
+.loading{
+    animation:loadingBar 3s linear forwards;
+}
+
+@keyframes loadingBar{
+    0%{
+        width:0%;
+    }
+    100%{
+        width:100%;
+    }
+}
+
+/* Loader Fade Out */
+.loader.hide{
