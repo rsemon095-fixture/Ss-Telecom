@@ -17,21 +17,13 @@ import { getDatabase } from "https://www.gstatic.com/firebasejs/11.10.0/firebase
 // ==============================
 
 const firebaseConfig = {
-
-  apiKey: "YOUR_API_KEY",
-
-  authDomain: "YOUR_PROJECT.firebaseapp.com",
-
-  databaseURL: "https://YOUR_PROJECT-default-rtdb.firebaseio.com",
-
-  projectId: "YOUR_PROJECT",
-
-  storageBucket: "YOUR_PROJECT.firebasestorage.app",
-
-  messagingSenderId: "YOUR_SENDER_ID",
-
-  appId: "YOUR_APP_ID"
-
+  apiKey: "AIzaSyDQblfbpE2-kt7H9V39GaEa3pNciMmnzVk",
+  authDomain: "ss-telecom-53c74.firebaseapp.com",
+  databaseURL: "https://ss-telecom-53c74-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "ss-telecom-53c74",
+  storageBucket: "ss-telecom-53c74.firebasestorage.app",
+  messagingSenderId: "277290596365",
+  appId: "1:277290596365:web:87ecdfae1e1c982cad3d44"
 };
 
 
